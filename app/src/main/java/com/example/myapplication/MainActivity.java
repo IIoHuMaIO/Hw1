@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         Typeface tf = Typeface.createFromAsset(getAssets(),"fonts/Bungee-Regular.ttf");
         TextView welcome = findViewById(R.id.welcome);
         welcome.setTypeface(tf);
+        getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this,R.color.white));
         image=findViewById(R.id.image);
         Glide.with(this).load("https://i.pinimg.com/474x/23/ab/a6/23aba60b66ef08174bb7455c4a8a2d2f.jpg").into(image);
     }
